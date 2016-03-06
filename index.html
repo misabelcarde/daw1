@@ -1,1 +1,71 @@
-Hello world!
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Last.fm live recommender</title>
+<link rel="icon" href="img/favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<script src="js/jquery-2.2.1.min.js" type="text/javascript"></script>
+<script src="js/md5.js" type="text/javascript"></script>
+<script src="js/lastfm_keys.js" type="text/javascript"></script>
+<script src="js/lastfm.js" type="text/javascript"></script>
+<script src="js/spotify.js" type="text/javascript"></script>
+</head>
+<body>
+<header>
+	<span class="header_top"></span>
+	<div class="header_content">
+		<span class="header_title">Last.fm live recommender</span>
+		<div class="header_log_content">
+			<form id="apikey-form">
+				<input id="apikey-input" placeholder="Last.fm API key">
+				<button type="submit">Go!</button>
+			</form>
+			<form id="username-form" class="display_none">
+				<input id="username-input" placeholder="Last.fm username">
+				<button type="submit">Go!</button>
+			</form>
+		</div>
+		<div id="header_personal_info">
+			<!-- content provided by lastfm.js-->
+		</div>
+	</div>
+	
+	<img src="img/listen_background.jpg" class="header_background_image">
+</header>
+<section class="how_works_section">
+	<span>How it works</span>
+	<div class="how_works_step">
+		<img src="img/typing.jpg">
+		<p>Introduce your Last.fm user if you have scrobblings. Remember you can always look for other users' music ;)</p>
+	</div>
+	<div class="how_works_step">
+		<img src="img/top.jpg">
+		<p>The system will search for your top artists in the last six months and find some recommendations based on them.</p>
+	</div>
+	<div class="how_works_step">
+		<img src="img/listen.jpg">
+		<p>Listen to the selected artists and their songs!</p>
+	</div>
+</section>
+<section class="music_section display_none">
+	<span class="music_section_title">Your recommendations</span>
+	<div id="music_section_container">
+		<!-- content provided by lastfm.js-->
+	</div>
+</section>
+<footer>
+	<section>
+		<span class="footer_title">References</span>
+		<a href="http://www.last.fm/api">Last.fm API</a>
+		<a href="https://labs.spotify.com/2015/03/09/understanding-spotify-web-api/">Spotify API</a>
+	</section>
+	<section>
+		<span class="footer_title">Mª Isabel Cardeñosa</span>
+		<a href="http://www.last.fm/es/user/misabelcarde">Last.fm</a>
+		<a href="https://www.linkedin.com/in/misabelcarde">LinkedIn</a>
+		<a href="https://twitter.com/MIsabelCarde">Twitter</a>
+	</section>
+</footer>
+</body>
+</html>
