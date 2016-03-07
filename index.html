@@ -17,12 +17,12 @@
 	<div class="header_content">
 		<span class="header_title">Last.fm live recommender</span>
 		<div class="header_log_content">
-			<form id="apikey-form">
-				<input id="apikey-input" placeholder="Last.fm API key">
+			<form id="apikey_form">
+				<input id="apikey_input" placeholder="Last.fm API key">
 				<button type="submit">Go!</button>
 			</form>
-			<form id="username-form" class="display_none">
-				<input id="username-input" placeholder="Last.fm username">
+			<form id="username_form" class="display_none">
+				<input id="username_input" placeholder="Last.fm username">
 				<button type="submit">Go!</button>
 			</form>
 		</div>
@@ -37,7 +37,7 @@
 	<span>How it works</span>
 	<div class="how_works_step">
 		<img src="img/typing.jpg">
-		<p>Introduce your Last.fm user if you have scrobblings. Remember you can always look for other users' music ;)</p>
+		<p>Introduce your Last.fm API key and your user if you have scrobblings. Remember you can always look for other users' music ;)</p>
 	</div>
 	<div class="how_works_step">
 		<img src="img/top.jpg">
@@ -45,12 +45,12 @@
 	</div>
 	<div class="how_works_step">
 		<img src="img/listen.jpg">
-		<p>Listen to the selected artists and their songs!</p>
+		<p>Click in your top listened artists to see the recommendations based on them. Listen to the selected artists and their songs!</p>
 	</div>
 </section>
-<section class="music_section display_none">
+<section id="music_section" class="music_section display_none">
 	<span class="music_section_title">Your recommendations</span>
-	<div id="music_section_container">
+	<div id="music_section_container" class="text_align_center"> 
 		<!-- content provided by lastfm.js-->
 	</div>
 </section>

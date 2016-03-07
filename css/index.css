@@ -67,13 +67,13 @@ header .header_background_image{
 	margin-top: 1em;
 }
 
-.how_works_section, .music_section{
+.how_works_section{
 	width: 100%;
 	text-align: center;
 	padding: 3em 0;
 }
 
-.how_works_section span, .music_section .music_section_title{
+.how_works_section span{
 	font-size: 250%;
 	font-weight: bold;
 	display: block;
@@ -113,11 +113,17 @@ header .header_background_image{
 
 .music_section{
 	background-color: #3b3b3b;
+	width: 100%;
+	padding: 3em 0;
 }
 
 .music_section .music_section_title{
 	color: #f74349;
 	text-align: center;
+	font-size: 250%;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 1em;
 }
 
 #music_section_container{
@@ -136,26 +142,53 @@ header .header_background_image{
 	position: relative;
 }
 
-#music_section_container .artist_container span{
+#music_section_container .artist_container span, #current_recommendation .similar_artist_container span{
 	position: absolute;
 	bottom: 2em;
 	left: 2em;
 }
 
-#music_section_container .artist_container span:hover{
+#music_section_container .artist_container span:hover, #current_recommendation .similar_artist_container span:hover{
 	background-color: rgba(0, 0, 0, 0.6);
 	padding: 0.5em;
 	bottom: 1.5em;
 	left: 1.5em;
 }
 
-#music_section_container .artist_container img{
+#music_section_container .artist_container img, #current_recommendation .similar_artist_container img{
 	width: 100%;
 }
 
-#music_section_container .artist_container img:hover{
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
+.selected_artist{
+	border: solid #f74349 0.3em;
+}
+
+#current_recommendation{
+	border: solid 0.3em #f74349;
+	margin: 1em 0.5em;
+	padding: 1.5em 0;
+	text-align: center;
+}
+
+#current_recommendation .similar_artist_container{
+	width: 15%;
+	padding: 0.5em;
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+}
+
+#current_recommendation .similar_artist_container span{
+	position: absolute;
+	bottom: 1em;
+	left: 0.8em;
+}
+
+#current_recommendation .similar_artist_container span:hover{
+	background-color: rgba(0, 0, 0, 0.6);
+	padding: 0.2em;
+	bottom: 0.8em;
+	left: 0.6em;
 }
 
 footer{
@@ -188,4 +221,13 @@ footer a{
 
 .display_none{
 	display: none;
+}
+
+.gray_image{
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+
+.text_align_center{
+	text-align: center;
 }
