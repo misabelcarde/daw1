@@ -159,7 +159,7 @@ header .header_background_image{
 	width: 100%;
 }
 
-.selected_artist{
+.selected_artist, .playing_preview{
 	border: solid #f74349 0.3em;
 }
 
