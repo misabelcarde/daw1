@@ -86,9 +86,9 @@ function searchUserInfo(username){
 	}, [["user", username]]);
 }
 function userInfoTemplate(realname, count, photo){
-	return "<span class='header_info header_info_title'>" + realname + "</span>" +
-	"<span class='header_info'>" + count + " scrobblings</span>" +
-	"<img src='" + photo + "' class='header_info'>";
+	return "<div class='header_info_div'><span class='header_info header_info_title'>" + realname + "</span>" +
+	"<span class='header_info'>" + count + " scrobblings</span></div>" +
+	"<div class='header_info_img_div'><img src='" + photo + "'></div>";
 }
 
 /*--- SEARCH USER TOP ARTISTS ---*/

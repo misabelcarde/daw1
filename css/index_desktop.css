@@ -1,0 +1,31 @@
+#header_personal_info{
+	margin-top: 1em;
+}
+
+#header_personal_info img{
+	margin-top: 1em;
+}
+
+#header_personal_info.header_personal_info_data{
+	padding: 1em 1.5em;
+}
+
+.header_info_img_div{
+	width: 90%;
+}
+
+.how_works_section .how_works_step{
+	width: 32%;
+}
+
+.how_works_section .how_works_step img{
+	width: 60%;
+}
+
+#music_section_container .artist_container{
+	width: 23%;
+}
+
+#current_recommendation .similar_artist_container{
+	width: 22%;
+}

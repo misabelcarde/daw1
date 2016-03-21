@@ -1,0 +1,103 @@
+header .header_background_image{
+	display:block;
+	z-index: -9999;
+	overflow: hidden;
+}
+
+header .header_background_image img{
+	width: auto;
+	height: 35em;
+}
+
+.header_content{
+	left: 10%;
+}
+
+.header_content .header_title{
+	font-size: 300%;
+	margin-bottom: 0.5em;
+}
+
+.header_log_content{
+	width: 90%;
+}
+
+.header_log_content input{
+	width: 100%;
+	margin-bottom: 2%;
+	display: block;
+}
+
+.header_log_content button{
+	width: 100%;
+	display: block;
+}
+
+#header_personal_info{
+	margin-top: 2%;
+	width: 85%;
+}
+
+#header_personal_info .header_info_title{
+	margin-bottom: 0.5em;
+}
+
+.header_info_div{
+	display: inline-block;
+	width: 63%;
+	margin-right: 2%;
+	vertical-align: top;
+}
+
+.header_info_img_div{
+	display: inline-block;
+	width: 35%;
+	vertical-align: top;
+	text-align: right;
+}
+
+#header_personal_info img{
+	margin: 0;
+	width: 100%;
+}
+
+#header_personal_info{
+	display: block;
+}
+
+.how_works_section .how_works_step{
+	display: inline-block;
+	width: 32%;
+}
+
+.how_works_section .how_works_step img{
+	width: 75%;
+}
+
+#music_section_container{
+	font-size: 100%;
+	padding: 0 2.5%;
+}
+
+#music_section_container .artist_container{
+	width: 30%;
+}
+
+#music_section_container .artist_container span, #current_recommendation .similar_artist_container span{
+	bottom: 1.2em;
+	left: 0.9em;
+}
+
+#music_section_container .artist_container span:hover, #current_recommendation .similar_artist_container span:hover{
+	padding: 0.3em;
+	bottom: 0.9em;
+	left: 0.6em;
+}
+
+#current_recommendation .similar_artist_container{
+	width: 30%;
+}
+
+#current_recommendation{
+	padding: 1em 0;
+}

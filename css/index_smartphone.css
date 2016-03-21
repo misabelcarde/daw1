@@ -1,0 +1,122 @@
+header .header_background_image{
+	display:block;
+	z-index: -9999;
+	overflow: hidden;
+}
+
+header .header_background_image img{
+	width: auto;
+	height: 30em;
+}
+
+.header_content .header_title{
+	font-size: 200%;
+	margin-bottom: 0.5em;
+}
+
+.header_log_content input{
+	width: 99%;
+	font-size: 150%;
+	margin-bottom: 2%;
+	display: block;
+}
+
+.header_log_content button{
+	width: 100%;
+	font-size: 150%;
+	display: block;
+}
+
+#header_personal_info{
+	margin-top: 2%;
+}
+
+#header_personal_info.header_personal_info_data{
+	padding: 1em;
+}
+
+#header_personal_info .header_info_title{
+	font-size: 110%;
+	margin-bottom: 0.5em;
+}
+
+.header_info_div{
+	display: inline-block;
+	width: 63%;
+	margin-right: 2%;
+	vertical-align: top;
+}
+
+.header_info_img_div{
+	display: inline-block;
+	width: 35%;
+	vertical-align: top;
+	text-align: right;
+}
+
+#header_personal_info img{
+	margin: 0;
+	width: 100%;
+}
+
+#header_personal_info{
+	display: block;
+}
+
+.how_works_section{
+	padding: 1.5em 0;
+}
+
+.how_works_section span{
+	font-size: 180%;
+}
+
+.how_works_section .how_works_step{
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 2.5em;
+}
+
+.how_works_section .how_works_step img{
+	width: 40%;
+	margin-bottom: 0;
+}
+
+.how_works_section .how_works_step p{
+	padding: 0 3em;
+}
+
+.music_section .music_section_title{
+	font-size: 180%;
+	margin-bottom: 0.5em;
+}
+
+#music_section_container{
+	font-size: 100%;
+	padding: 0 2.5%;
+	text-align: center;
+}
+
+#music_section_container .artist_container{
+	width: 40%;
+}
+
+#music_section_container .artist_container span, #current_recommendation .similar_artist_container span{
+	bottom: 1.2em;
+	left: 0.9em;
+}
+
+#music_section_container .artist_container span:hover, #current_recommendation .similar_artist_container span:hover{
+	padding: 0.3em;
+	bottom: 0.9em;
+	left: 0.6em;
+}
+
+#current_recommendation .similar_artist_container{
+	width: 40%;
+}
+
+#current_recommendation{
+	padding: 1em 0;
+}

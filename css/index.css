@@ -8,9 +8,12 @@ header{
 }
 
 header .header_background_image{
-	width:100%;
 	display:block;
 	z-index: -9999;
+}
+
+header .header_background_image img{
+	width: 100%;
 }
 
 .header_top{
@@ -26,6 +29,7 @@ header .header_background_image{
 	color: white;
 	top: 8%;
 	left: 5%;
+	width: 90%;
 }
 
 .header_content .header_title{
