@@ -6,7 +6,7 @@ header .header_background_image{
 
 header .header_background_image img{
 	width: auto;
-	height: 30em;
+	height: 40em;
 }
 
 .header_content .header_title{
@@ -35,8 +35,12 @@ header .header_background_image img{
 }
 
 #header_personal_info .header_info_title{
-	font-size: 110%;
+	font-size: 240%;
 	margin-bottom: 0.5em;
+}
+
+#header_personal_info .header_info{
+	font-size: 200%;
 }
 
 .header_info_div{
@@ -104,6 +108,7 @@ header .header_background_image img{
 #music_section_container .artist_container span, #current_recommendation .similar_artist_container span{
 	bottom: 1.2em;
 	left: 0.9em;
+	font-size: 200%;
 }
 
 #music_section_container .artist_container span:hover, #current_recommendation .similar_artist_container span:hover{
