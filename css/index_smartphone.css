@@ -10,20 +10,19 @@ header .header_background_image img{
 }
 
 .header_content .header_title{
-	font-size: 200%;
+	font-size: 400%;
 	margin-bottom: 0.5em;
 }
 
 .header_log_content input{
-	width: 99%;
-	font-size: 150%;
+	font-size: 300%;
 	margin-bottom: 2%;
 	display: block;
 }
 
 .header_log_content button{
 	width: 100%;
-	font-size: 150%;
+	font-size: 300%;
 	display: block;
 }
 
@@ -68,7 +67,7 @@ header .header_background_image img{
 }
 
 .how_works_section span{
-	font-size: 180%;
+	font-size: 300%;
 }
 
 .how_works_section .how_works_step{
@@ -119,4 +118,16 @@ header .header_background_image img{
 
 #current_recommendation{
 	padding: 1em 0;
+}
+
+footer section{
+	width: 40%;
+}
+
+footer .footer_title{
+	font-size: 200%;
+}
+
+footer a{
+	font-size: 180%;
 }

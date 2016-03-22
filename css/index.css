@@ -41,6 +41,7 @@ header .header_background_image img{
 .header_log_content input{
 	width: 20em;
 	font-size: 160%;
+	border: 0;
 }
 
 .header_log_content button{
