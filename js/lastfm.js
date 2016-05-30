@@ -40,6 +40,10 @@ function bindUserTopArtistsRecommendations(){
 			$(this).find("img").addClass("gray_image");
 			$("#music_section_container").removeClass("text_align_center");
 			searchSimilarArtists($(this));
+		}
+
+		if(currentTrack !== null ){
+			currentTrack.pause();
 		}	
 	});
 }
