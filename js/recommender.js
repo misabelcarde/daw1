@@ -22,7 +22,6 @@ function bindSubmitApiKey(){
 		saveLastfmApiKeyToStorage();
 		//$(".display_none").removeClass("display_none");
 		$("#username_form").removeClass("display_none");
-		$("#music_section").removeClass("display_none");
 		$("#apikey_form").addClass("display_none");
 	});
 }
@@ -32,6 +31,8 @@ function bindConfigButton(){
 		$("#apikey_form").removeClass("display_none");
 		$("#username_form").addClass("display_none");
 		$("#music_section").addClass("display_none");
+		$("#header_personal_info").empty();
+		$("#header_personal_info").removeClass();
 	});
 }
 function bindSubmitUsername(){
@@ -39,6 +40,8 @@ function bindSubmitUsername(){
 		event.preventDefault();
 		username = $("#username_input").val();
 		if(checkUsername(username)){
+			$("#music_section").removeClass("display_none");
+			$("#header_personal_info").removeClass("display_none");
 			searchUserInfo(username);
 			$('html,body').delay(500).animate({'scrollTop' : $("#music_section").offset().top},1000);
 		}else{
@@ -65,7 +68,7 @@ function ajaxCall(url, callback){
 function configLastfmApiKeyFromStorage(){
 	if (typeof(Storage) !== "undefined") {
 		apiStorageVal = localStorage.getItem(apiKeyStorage);
-		if(apiStorageVal !== ""){
+		if(apiStorageVal !== null && apiStorageVal !== ""){
 			apiKey = apiStorageVal;
 			$(".display_none").removeClass("display_none");
 			$("#apikey_form").addClass("display_none");

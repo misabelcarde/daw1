@@ -234,7 +234,7 @@ footer a{
 }
 
 .display_none{
-	display: none;
+	display: none!important;
 }
 
 .gray_image{
@@ -243,9 +243,9 @@ footer a{
 }
 
 .text_align_center{
-	text-align: center;
+	text-align: center!important;
 }
 
 .text_align_right{
-	text-align: right;
+	text-align: right!important;
 }
