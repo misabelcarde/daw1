@@ -1,13 +1,17 @@
 /*--- GLOBAL VARS ---*/
 var username = "";
 var apiKey = "";
+var apiKeyStorage = "apiKeyLastfm";
 
-/*--- INITIAL BINDS ---*/
+/*--- INITIAL BINDS AND CONFIG---*/
 $(document).ready(function(){
 	bindSubmitApiKey();
+	bindConfigButton();
 	bindSubmitUsername();
 	bindUserTopArtistsRecommendations();
 	bindSpotifySimilarArtists();
+
+	configLastfmApiKeyFromStorage();
 });
 
 /*--- API AND USER BINDINGS ---*/
@@ -15,8 +19,19 @@ function bindSubmitApiKey(){
 	$("#apikey_form").submit(function(event){
 		event.preventDefault();
 		apiKey = $("#apikey_input").val();
-		$(".display_none").removeClass("display_none");
+		saveLastfmApiKeyToStorage();
+		//$(".display_none").removeClass("display_none");
+		$("#username_form").removeClass("display_none");
+		$("#music_section").removeClass("display_none");
 		$("#apikey_form").addClass("display_none");
+	});
+}
+function bindConfigButton(){
+	$("#api_config").click(function(){
+		removeLastfmApiKeyFromStorage();
+		$("#apikey_form").removeClass("display_none");
+		$("#username_form").addClass("display_none");
+		$("#music_section").addClass("display_none");
 	});
 }
 function bindSubmitUsername(){
@@ -45,4 +60,27 @@ function ajaxCall(url, callback){
 	        callback(response);
 	    }
  	});
+}
+
+function configLastfmApiKeyFromStorage(){
+	if (typeof(Storage) !== "undefined") {
+		apiStorageVal = localStorage.getItem(apiKeyStorage);
+		if(apiStorageVal !== ""){
+			apiKey = apiStorageVal;
+			$(".display_none").removeClass("display_none");
+			$("#apikey_form").addClass("display_none");
+		}
+	}
+}
+
+function saveLastfmApiKeyToStorage(){
+	if (typeof(Storage) !== "undefined") {
+		localStorage.setItem(apiKeyStorage, apiKey);
+	}
+}
+
+function removeLastfmApiKeyFromStorage(){
+	if (typeof(Storage) !== "undefined") {
+		localStorage.setItem(apiKeyStorage, "");
+	}
 }

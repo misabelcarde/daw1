@@ -27,9 +27,17 @@ header .header_background_image img{
 	position: absolute;
 	font-weight: bold;
 	color: white;
-	top: 8%;
+	top: 5%;
 	left: 5%;
 	width: 90%;
+}
+
+.header_content .header_config{
+	height: 3em;
+}
+
+.header_content .header_config .config_icon{
+	height: 100%;
 }
 
 .header_content .header_title{
@@ -70,6 +78,7 @@ header .header_background_image img{
 
 #header_personal_info img{
 	margin-top: 1em;
+	width: 90%;
 }
 
 .how_works_section{
@@ -235,4 +244,8 @@ footer a{
 
 .text_align_center{
 	text-align: center;
+}
+
+.text_align_right{
+	text-align: right;
 }
