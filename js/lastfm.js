@@ -22,8 +22,17 @@ function lastfmApiCall(method, callback, optionalUrlParam){
 }
 
 /*--- BINDINGS ---*/
+/*
+* Search similar artists as the selected one. Add a new section for it.
+* Pause any song which could be playing.
+*/
 function bindUserTopArtistsRecommendations(){
 	$(document).on("click",".artist_container", function(){
+		jPlayerPause();
+		/*if(currentTrack !== null ){
+			currentTrack.pause();
+		}*/	
+
 		if($(this).hasClass("selected_recommendation")){
 			$(this).removeClass("selected_recommendation selected_artist");
 			$(this).find("img").removeClass("gray_image");
@@ -41,17 +50,29 @@ function bindUserTopArtistsRecommendations(){
 			$("#music_section_container").removeClass("text_align_center");
 			searchSimilarArtists($(this));
 		}
-
-		if(currentTrack !== null ){
-			currentTrack.pause();
-		}	
 	});
 }
+/*
+* Once similar artists as the selected one are displayed, when one of them
+* is selected its song starts playing (its song's URL is searched with the
+* Spotify API).
+*/
 function bindSpotifySimilarArtists(){
 	$(document).on("click",".similar_artist_container", function(){
 		var targetArtist = $(this);
-		console.log(targetArtist);
-		if(currentTrack !== null && targetArtist.hasClass(playingClass)){
+		var jPlayerConfigured = jPlayerConfigArtistContainer(targetArtist);
+
+		if(jPlayerConfigured){
+			searchSpotifyArtistSong(targetArtist.attr("id").replace("similar_", "").replace(/--/g, " "), function(){
+				//This callback will be executed when currentTrack contains the URL of the song (see spotify.js).
+				jPlayerSong();
+				targetArtist.addClass(playingClass);
+			});	
+		}else{
+			targetArtist.removeClass(playingClass);
+		}
+
+		/*if(currentTrack !== null && targetArtist.hasClass(playingClass)){
 			$("."+playingClass).removeClass(playingClass);
 			currentTrack.pause();
 		}else{
@@ -74,9 +95,67 @@ function bindSpotifySimilarArtists(){
 			        });
 				}
 			});
-		}
-		
+		}*/
 	});
+}
+
+/*---JPLAYER---*/
+var jPlayerInitDiv ="<div id='jp_container_1' class='jp-audio' role='application' aria-label='media player'> <div id='jp_container_1_action' class='jp-play' role='button' tabindex='0'>";
+var jPlayerEndDiv = "</div></div>";
+
+/*
+* When an artist is selected (its song is playing or we want to play it),
+* this method configure the appropiate jPlayer HTML (remove it if we want)
+* to stop the song, or add it if we want to play the song).
+*/
+function jPlayerConfigArtistContainer(selectedArtist){
+	if(selectedArtist.find("div").attr("id") == "jp_container_1"){
+		//Delete jPlayer HTML for selectedArtist
+		selectedArtist.html(selectedArtist.find("div").find("div").html());
+		selectedArtist.removeClass(playingClass);
+		return false;
+	}else{
+		//Delete jPlayer HTML for current jPlayers if exixsts
+		var currentJplayers = $(".jp-audio");
+		if(currentJplayers.length > 0){
+			for(i = 0; i < currentJplayers.length; i++){
+				var newhtml = $(currentJplayers[i]).find("div").html();
+				$(currentJplayers[i]).parent().html(newhtml).removeClass(playingClass);;
+			
+			}
+		}
+
+		//Add jPlayer HTML for selectedArtist
+		selectedArtist.html(jPlayerInitDiv + selectedArtist.html() + jPlayerEndDiv);
+		selectedArtist.addClass(playingClass);
+		return true;
+	}
+}
+/*
+* jPlayer functions to play/stop the song. The song is provided as a URL
+* throw the global variable "currentTrack".
+*/
+function jPlayerSong(){
+	if($("#jp_container_1").hasClass("jp-state-playing")){
+		$("#jquery_jplayer_1").jPlayer("pause");
+	}else{
+		$("#jquery_jplayer_1").jPlayer("destroy");
+        $("#jquery_jplayer_1").jPlayer({
+            ready: function(event) {
+                $(this).jPlayer("setMedia", {
+        		    mp3: currentTrack
+                }).jPlayer("play");
+            },
+            supplied: "mp3",
+          	useStateClassSkin: true,
+          	autoBlur: false
+        });
+	}
+}
+function jPlayerPause(){
+	if($("#jp_container_1").hasClass("jp-state-playing")){
+		$("#jquery_jplayer_1").jPlayer("pause");
+	}
 }
 
 /*--- SEARCH USER INFO ---*/

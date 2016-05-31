@@ -19,6 +19,9 @@ function spotifyApiCall(url, callback, urlParam){
 }
 
 /*--- ARTIST SEARCH ---*/
+/*
+* Given the artist name, this method search for the ID in order to make other calls.
+*/
 function searchSpotifyArtistSong(artist, callback){
 	spotifyApiCall(urlSpotifySearch, function(data){
 		if(data.artists.items[0] != undefined){
@@ -28,12 +31,16 @@ function searchSpotifyArtistSong(artist, callback){
 		}
 	},[["q", artist.replace(/\s/g, "%20")], ["type", "artist"]]);
 }
-
+/*
+* Given the artist ID, this method serch for the artists' previews and select the first
+* one (its URL). This URL is kept in the global variable "currentTrack";
+*/
 function searchSpotifyArtistTopTracks(idArtist, callback){
 	spotifyApiCall(urlSpotifyArtistTopTracks.replace("{id}",idArtist), function(data){
 		currentTrack = null;
 		if(data.tracks.length > 0){
-			currentTrack = new Audio(data.tracks[0].preview_url);
+			//currentTrack = new Audio(data.tracks[0].preview_url);
+			currentTrack = data.tracks[0].preview_url;
 			callback();
 		}
 		//currentTracks = [];
