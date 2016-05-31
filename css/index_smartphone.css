@@ -14,24 +14,25 @@ header .header_background_image img{
 }
 
 .header_content .header_title{
-	font-size: 400%;
+	font-size: 200%;
 	margin-bottom: 0.5em;
 }
 
 .header_log_content input{
-	font-size: 300%;
+	font-size: 150%;
 	margin-bottom: 2%;
 	display: block;
 }
 
 .header_log_content button{
 	width: 100%;
-	font-size: 300%;
+	font-size: 150%;
 	display: block;
 }
 
 #header_personal_info{
 	margin-top: 2%;
+	width: 80%;
 }
 
 #header_personal_info.header_personal_info_data{
@@ -39,31 +40,31 @@ header .header_background_image img{
 }
 
 #header_personal_info .header_info_title{
-	font-size: 240%;
+	font-size: 150%;
 	margin-bottom: 0.5em;
 }
 
 #header_personal_info .header_info{
-	font-size: 200%;
+	font-size: 120%;
 }
 
 .header_info_div{
 	display: inline-block;
-	width: 63%;
-	margin-right: 2%;
+	width: 100%;
+	margin: 2% 0 4% 0;
 	vertical-align: top;
 }
 
 .header_info_img_div{
-	display: inline-block;
-	width: 35%;
+	display: block;
+	width: 100%;
 	vertical-align: top;
-	text-align: right;
+	text-align: center;
 }
 
 #header_personal_info img{
 	margin: 0;
-	width: 100%;
+	width: 70%;
 }
 
 #header_personal_info{
@@ -75,7 +76,7 @@ header .header_background_image img{
 }
 
 .how_works_section span{
-	font-size: 300%;
+	font-size: 180%;
 }
 
 .how_works_section .how_works_step{
@@ -110,14 +111,14 @@ header .header_background_image img{
 }
 
 #music_section_container .artist_container span, #current_recommendation .similar_artist_container span{
-	bottom: 1.2em;
+	bottom: 1em;
 	left: 0.9em;
-	font-size: 200%;
+	font-size: 120%;
 }
 
 #music_section_container .artist_container span:hover, #current_recommendation .similar_artist_container span:hover{
 	padding: 0.3em;
-	bottom: 0.9em;
+	bottom: 0.7em;
 	left: 0.6em;
 }
 
@@ -134,9 +135,9 @@ footer section{
 }
 
 footer .footer_title{
-	font-size: 200%;
+	font-size: 150%;
 }
 
 footer a{
-	font-size: 180%;
+	font-size: 100%;
 }
